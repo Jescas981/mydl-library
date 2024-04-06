@@ -1,7 +1,4 @@
-import layers.Conv
-import layers.Layer
-import modules.Model
-import layers
+from dllib import layers, modules
 from typing import List
 import torch
 

@@ -1,12 +1,11 @@
-from utilities import DataLoader
-from optimizers import BatchGradientDescent
-from functional import StandardScaler
-from models import MNIST64
 import torch
+from dllib.optimizers import BatchGradientDescent
+from dllib.functional import StandardScaler
+from dllib.losses import CategoricalCrossEntropyLoss
+from dllib.functional.metrics import accuracy
+import MNIST64
 from sklearn.datasets import load_digits
-from losses import CategoricalCrossEntropyLoss
 from sklearn.model_selection import train_test_split
-from functional.metrics import accuracy
 
 if __name__ == "__main__":
     digits = load_digits()

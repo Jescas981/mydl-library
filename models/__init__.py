@@ -1,1 +1,0 @@
-from .MNIST64 import MNIST64
