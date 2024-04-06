@@ -17,7 +17,7 @@ class Conv(ParameterLayer):
         kernel = self.params['k']
         k = kernel.shape[1]
         m, n, d = X.shape
-        output = torch.empty(m, n - k + 1, d - k + 1)
+        output = torch.empty(m, n - k + 1, d - k + 1, device=self.device)
         for i in range(n-k+1):
             for j in range(d-k+1):
                 w = X[:, i:i+k, j:j+k]  # Window samples
