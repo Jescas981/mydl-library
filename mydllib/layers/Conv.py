@@ -6,6 +6,7 @@ from . import ParameterLayer
 class Conv(ParameterLayer):
     def __init__(self, size: tuple[int, int], device: str = "cpu"):
         super().__init__()
+        self.device = device
         self.params['k'] = ParamInit()(size, 'conv', device)
 
     def describe(self) -> str:
@@ -28,7 +29,7 @@ class Conv(ParameterLayer):
         I = self.cache['I']
         k = prev_grad.shape[1]
         m, n, d = I.shape
-        dk = torch.empty(m, n - k + 1, d - k + 1)
+        dk = torch.empty(m, n - k + 1, d - k + 1, device=self.device)
 
         # Convolution of dk
         for i in range(n-k+1):
@@ -44,7 +45,7 @@ class Conv(ParameterLayer):
         prev_grad_rot = torch.rot90(prev_grad, k=2, dims=[1, 2])
         m, _, k = prev_grad.shape
         n, d = kernel_pad.shape
-        do = torch.empty(m, n - k + 1, d - k + 1)
+        do = torch.empty(m, n - k + 1, d - k + 1, device=self.device)
 
         # Convolution of do
         for i in range(n-k+1):
