@@ -1,9 +1,9 @@
 import torch
-from functional import ParamInit
-import layers
+from ..functional import ParamInit
+from . import ParameterLayer
 
 
-class Conv(layers.ParameterLayer):
+class Conv(ParameterLayer):
     def __init__(self, size):
         super().__init__()
         self.params['k'] = ParamInit()(size, 'conv')

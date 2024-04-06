@@ -1,9 +1,9 @@
 import torch
-import layers
-from functional import ParamInit
+from ..functional import ParamInit
+from . import ParameterLayer
 
 
-class Linear(layers.ParameterLayer):
+class Linear(ParameterLayer):
 
     def __init__(self, size):
         super().__init__()

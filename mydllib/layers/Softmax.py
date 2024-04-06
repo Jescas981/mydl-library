@@ -1,8 +1,8 @@
 import torch
-import layers
+from . import ActivationLayer
 
 
-class Softmax(layers.ActivationLayer):
+class Softmax(ActivationLayer):
     def __init__(self, n_classes: int):
         super().__init__()
         self.n_classes = n_classes

@@ -1,7 +1,7 @@
 import torch
-import layers
+from . import Layer
 
-class Flatten(layers.Layer):
+class Flatten(Layer):
   def __init__(self, dim):
     super().__init__()
     self.dim = dim

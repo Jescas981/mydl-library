@@ -1,6 +1,6 @@
 import torch
 from contextlib import contextmanager
-import layers
+from ..layers import Layer
 from typing import Dict, Tuple, Generator, List
 from abc import ABC, abstractmethod
 

@@ -1,7 +1,7 @@
 import torch
-import layers
+from . import ActivationLayer
 
-class Relu(layers.ActivationLayer):
+class Relu(ActivationLayer):
 
   def describe(self) -> str:
     return __name__

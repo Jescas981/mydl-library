@@ -1,4 +1,4 @@
-from optimizers import Optimizer
+from . import Optimizer
 from typing import Dict, Tuple, Generator
 import torch
 
