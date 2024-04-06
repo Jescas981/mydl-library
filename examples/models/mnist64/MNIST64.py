@@ -1,4 +1,4 @@
-from dllib import layers, modules
+from mydllib import layers, modules
 from typing import List
 import torch
 

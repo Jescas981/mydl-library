@@ -1,11 +1,11 @@
 import torch
-from dllib.optimizers import BatchGradientDescent
-from dllib.functional import StandardScaler
-from dllib.losses import CategoricalCrossEntropyLoss
-from dllib.functional.metrics import accuracy
-import MNIST64
+from mydllib.optimizers import BatchGradientDescent
+from mydllib.functional import StandardScaler
+from mydllib.losses import CategoricalCrossEntropyLoss
+from mydllib.functional.metrics import accuracy
 from sklearn.datasets import load_digits
 from sklearn.model_selection import train_test_split
+from MNIST64 import MNIST64
 
 if __name__ == "__main__":
     digits = load_digits()

@@ -1,9 +1,8 @@
-import losses.Loss as Loss
+from mydllib.losses import Loss
 import torch
 from functional.one_hot import one_hot
 
-
-class CategoricalCrossEntropyLoss(Loss.Loss):
+class CategoricalCrossEntropyLoss(Loss):
     def forward(self, y_true: torch.Tensor, y_hat: torch.Tensor) -> torch.Tensor:
         epsilon = 1e-32
         y_pred = torch.clip(y_hat, epsilon, 1 - epsilon)

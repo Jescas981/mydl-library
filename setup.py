@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='dllib',
+    name='mydllib',
     version='0.0.1',
     author="Jesus Castillo",
     author_email="jescas981@gmail.com",

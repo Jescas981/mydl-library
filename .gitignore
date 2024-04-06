@@ -1,6 +1,6 @@
 /**/data
 /**/__pycache__
 /dist
-/dllib.egg-info
+/mydllib.egg-info
 /.venv
 /build

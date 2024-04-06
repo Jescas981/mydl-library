@@ -1,6 +1,5 @@
 import torch
 
-
 def accuracy(y_true: torch.Tensor, y_hat: torch.Tensor) -> float:
     """
     Computes the accuracy of the predicted values with respect to the true labels.
