@@ -4,8 +4,8 @@ import torch
 
 
 class MNIST64(modules.Model):
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, device: str = "cpu") -> None:
+        super().__init__(device)
 
         self.layers: List[layers.Layer] = [
             layers.Conv(size=(5, 5)),

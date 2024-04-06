@@ -5,10 +5,10 @@ from . import ParameterLayer
 
 class Linear(ParameterLayer):
 
-    def __init__(self, size):
+    def __init__(self, size, device: str = "cpu"):
         super().__init__()
-        self.params['w'] = ParamInit()(size, 'kaiming')
-        self.params['b'] = ParamInit()((1, size[1]), 'zero')
+        self.params['w'] = ParamInit()(size, 'kaiming', device)
+        self.params['b'] = ParamInit()((1, size[1]), 'zero', device)
 
     def describe(self) -> str:
         return f"{__name__} | w{list(self.params['w'].shape)} - b{list(self.params['b'].shape)}"

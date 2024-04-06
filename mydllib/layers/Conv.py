@@ -4,9 +4,9 @@ from . import ParameterLayer
 
 
 class Conv(ParameterLayer):
-    def __init__(self, size):
+    def __init__(self, size: tuple[int, int], device: str = "cpu"):
         super().__init__()
-        self.params['k'] = ParamInit()(size, 'conv')
+        self.params['k'] = ParamInit()(size, 'conv', device)
 
     def describe(self) -> str:
         return f"{__name__}{list(self.params['k'].shape)}"

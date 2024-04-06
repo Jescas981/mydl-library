@@ -6,6 +6,9 @@ from abc import ABC, abstractmethod
 
 
 class Model(ABC):
+    def __init__(self, device: str = "cpu") -> None:
+        super().__init__()
+
     def __call__(self, X: torch.Tensor) -> torch.Tensor:
         return self.forward(X)
 
